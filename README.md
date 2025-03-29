@@ -1,1 +1,1 @@
-# embeded_toolkit
+# embedded_toolkit
