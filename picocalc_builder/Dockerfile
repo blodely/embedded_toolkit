@@ -13,5 +13,9 @@ RUN chsh -s /bin/zsh && sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/
 # builder env
 RUN apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi python3
 
-RUN git clone https://github.com/raspberrypi/pico-sdk.git && cd pico-sdk && git submodule update --init --recursive && cd ..
-ENV PICO_SDK_PATH=/ws/pico-sdk
+# pico-sdk env
+RUN cd / && git clone --recurse-submodules https://github.com/raspberrypi/pico-sdk.git
+ENV PICO_SDK_PATH=/pico-sdk
+
+# picocalc env
+RUN cd / && git clone --recurse-submodules https://github.com/clockworkpi/PicoCalc.git
